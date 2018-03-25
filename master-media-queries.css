@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/*CSS Document */
+@media screen and (max-width: 1060px) {
+    .container {
+        width: 90%; /* static width container always stays at this width no matter what the window size */
+
+    }
+    ul#menu li a.button {
+	
+    padding: 20px 25px;
+    
+    }
+    #splash{
+    
+        background-size: cover; 
+    }
+    #splash h1{
+    
+    padding: 100px 250px;
+    }
+    iframe{
+        width: 100%;
+    }
+    img{
+            width: 50%;
+            height: auto;
+        }
+    #othersocialmedia img{
+            padding: 0 20px;
+           width: 400px;
+           height: auto;
+        }
+    h1{
+        padding: 0px 100px 0px 100px;
+        font-family: Bellefair;
+        margin: 0;
+        letter-spacing: 0.3em;
+        font-size: 1em;
+    }
+    h2{
+        
+         
+         padding: 0px 100px;
+        
+        margin: 0;
+        
+    }
+    h3{
+         
+        padding: 0px 25px;
+        font-size: 1em;
+        margin: 0;
+    }
+    }
+    
+ @media screen and (max-width: 767px) {
+        
+        ul#menu li a.button {
+        
+        padding: 20px 10px;
+        font-size: 1em;
+        }
+        #splash{
+    
+            background-size: cover; 
+        }
+        #splash h1{
+    
+        padding: 100px 150px;
+        }
+        #footer a{
+         padding: 0 5px;
+         width: 100%;
+        }
+        
+       #othersocialmedia img{
+        width: 350px;
+        height: auto;
+    } 
+}
+
+@media screen and (max-width: 480px) {
+    
+    ul#menu li a.button {
+	
+    padding: 20px 4px;
+    font-size: 0.8em;
+    }
+    #splash{
+    
+        background-size: cover; 
+    }
+        #splash h1{
+    
+        padding: 100px 50px;
+        }
+    #othersocialmedia img{
+
+    width: 100px;
+    height: auto;
+   
+    
+        }
+}
+

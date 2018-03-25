@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>A Brief History of Social Media</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="p12-css/bootstrap.min.css" rel="stylesheet">
+
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="p12-css/carousel.css" rel="stylesheet">
+    
+     <style>
+      /* Navigation bar alterations */
+      .navbar-inverse {
+          background-color: #1689C8;        /* change navbar color to gold */
+          border-color: #000;            /* navbar border to dark gold */
+      }
+      .navbar-inverse .navbar-nav > li > a { 
+          color: #ddd; 			       /* change navbar button font color to brighter white */
+      }
+      .navbar-inverse .navbar-brand {
+          color: #ddd;                   /* change title at left on navbar to brighter white */
+      }
+      @media (min-width: 768px){            /* for large display sizes ... */
+        .navbar-wrapper .navbar {           /* give nav bar rounded ends */
+          border-radius: 30px;
+        }
+        .navbar-wrapper {                   /* pull nav bar to top of display */
+          margin-top: 0px;
+        }
+      }
+      
+      .carousel-inner > .item > img {
+        height: auto;
+        width: auto;  
+      }
+      @media (max-width: 1460px){
+        .carousel {                         /* shorten carousel height on medium size displays */
+          height: 400px;
+        }
+        .carousel .item {
+          height: 400px;
+          background-color: #FFF;
+        }
+        .carousel-inner > .item > img {
+        height: 500px;
+        
+      }}
+       @media (max-width: 899px){
+        .carousel {                         /* shorten carousel height on medium size displays */
+          height: 400px;
+        }
+        .carousel .item {
+          height: 400px;
+          background-color: #FFF;
+        }
+        .carousel-inner > .item > img {
+        height: 400px;
+        
+      }
+      
+       }
+       @media (max-width: 720px){           
+          .carousel-inner > .item > img {   /* keep image at static size on small displays */
+            width: 719px;
+            max-width: 719px;
+            height: 400px;
+          }
+       }
+       /* Carousel image caption button alterations */
+       .btn-primary {
+          color: #222222;                   /* change image caption button font to white */
+          background-color: #FBD93C;        /* change image caption button to gold */
+          border-color: #DBBE34;
+        }
+        .btn-primary:hover {  
+		   color: #fff;                 /* change image caption button font to white on hover */
+          background-color: #FBD93C;        /* change image caption button to gold */
+          border-color: #DBBE34;
+		   
+		  
+
+        }
+       
+        @media (max-width: 899px){           
+          .carousel {
+            height: 400px;
+          }
+          .carousel .item{
+            height: 400px;
+            background-color: #fff; 
+          }
+          }
+    </style>
+    
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+<a href="master-index.html" class="button">return to IR</a>
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">A Brief History of Social Media</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">Other Sites</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Store</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Sources Sited</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">About the Author</a></li>
+                    <li><a href="#">Social Media Creepy Pastas</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="p12-images/socialmediamarketing.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Social Media Fact #1</h1>
+              <p>There are 2.3 billion active social media users.</p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="p12-images/socialmedia2.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Social Media Fact #2</h1>
+              <p> 3.2 billion images are shared each day. </p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="p12-images/socialmedia3.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Social Media Fact #3</h1>
+              <p>72% of all online US adults visit Facebook at least once a month</p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="Fourth-slide" src="p12-images/socialmedia4.png" alt="Fourth slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Social Media Fact #4</h1>
+              <p>45% of users feel “worried or uncomfortable” when email and Facebook are inaccessible.</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="p12-images/zuckerberg2.jpg"  width="140" height="140">
+          <h2>Mark Zuckerberg</h2>
+          <p>Mark Elliot Zuckerberg is an American computer programmer and Internet entrepreneur.
+          He is a co-founder of Facebook, and currently operates as its chairman and
+          chief executive officer.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="p12-images/Ohanian.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Alexis Ohanian</h2>
+          <p>Alexis Kerry Ohanian is an American Internet entrepreneur and investor,
+          who is co-founder and executive chairman of the social news website Reddit.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="p12-images/Hurley.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Chad Hurley</h2>
+          <p>Chad Meredith Hurley is an American co-founder and former CEO of the popular video-sharing website YouTube and MixBit.
+          In June 2006, he was voted 28th on Business 2.0's "50 People Who Matter Now" list.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Myspace <span class="text-muted"></span></h2>
+          <p class="lead">MySpace was originally the site a user could make a page all about them.
+				The user could edit everything on their page, from their profile picture to the background of their page.
+				However with the dawn of facebook came the decline of MySpace. MySpace still exists, however it is mainly used
+				bands to get their music out there.
+				Myspace is a social networking website offering an interactive, user-submitted network of friends, personal
+				profiles, blogs, groups, photos,music, and videos. It is headquartered in Beverly Hills, California. It was
+				founded on August 1st, 2003. Myspace was then acquired by News Corporation in July of 2005 for $580 million.
+				From 2005 to 2008, Myspace was the  largest social networking site in the world. It even surpassed google as the
+				most visited website in June 2006. However, in April 2008, Myspace was overtaken by Facebook in the number of
+				unique worldwide visitors, and was surpassed in the number of unique U.S. visitors in May 2009.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="p12-images/myspace2.png" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Facebook <span class="text-muted"></span></h2>
+          <p class="lead">While not as customizeable as MySpace, FaceBook introduced a more structured and easier to use platfrom.
+				Facebook was created by Mark Zuckerburg, and launched on Febuary 4th, 2004, while he was still a student at Havard University.
+				While still being able to customize the user's individual profile, there is also the instant message option to
+				keep in contact with friends and family. Another key feature that had the sole purpose of attracting teen and
+				young adult users is the relationship status. FaceBook in general was made to target a young audience.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="p12-images/facebook.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Instagram <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Instagram was launched on October 6th, 2010. It was originally developed by Kevin Systrom and Mike Krieger
+				of Burbn INC. It was later bought up by Facebook in 2012 for a price of $1 billion worth of cash and stock.
+				Instagram is a mobile, desktop and web-based photo-sharing app and service that allows users to share their
+				photos and videos to either the whole public, or just privately to your approved followers. Once uploaded, the
+				user can apply a number of filters to their photos and videos. Users can also add their location through geotags,
+				and also add hashtags to their comments. There are new Instagram users starting new profiles almost daily, currently
+				the number of Instagram users are in the 600 million range.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="p12-images/INstagram.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Clayton Kuhlmeier: cek16b <a href="#">(DON'T PRESS THIS BUTTON)</a> &middot; <a href="#">Ich wusste, dass du den Knopf ausprobieren wurdest</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="p12-js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="p12-js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="p12-js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<html>
+<head>
+  <title>ORDER FORM</title>
+   <link rel=stylesheet type=text/css href="http://jdstiles.com/java/hs.css">
+   <link href="4000-style.1.css" rel="stylesheet" type="text/css">
+   <link href="4000-style-navbar.css" rel="stylesheet" type="text/css">
+   <script language="JavaScript"><!--  
+  
+//--></script>
+<style type="text/css"><!-- 
+   input.num { font-family: monospace; text-align: Right }
+   h1 {font-family: Comic Sans MS; font-size: 16pt; color: #008080; font-weight: bold; margin-bottom:0px; padding:0px}
+//--></style>
+<title>Interactive JavaScript Order Form</title>
+<script language="javascript"><!-- 
+
+var RowsInForm = 5          //How many line items will be in the order form?
+var ProductsInList = 5     //How many products in your product list?
+var SalesTaxRate = 0.0600   //Set to sales tax rate in decimal. e.g. 0.0775 is 6.00%.
+var TaxableState = "Sales Tax"     //Set to name of state you charge sales tax in.
+var ProdSubscript = 0       //Identifies subscript of selected product in current row.
+
+function MakeArray(n) {
+   this.length = n
+   for (var i=1;i<=n;i++) {this[i]=0}
+   return this
+}
+
+function BuildZeroArray(n) {
+   this.length = n
+   for (var i=0;i<=n;i++) {this[i]=0}
+   return this
+}
+
+function prodobj(name, unitprice) {
+   this.name = name
+   this.unitprice = unitprice
+}
+
+function ordobj(prodsub, qty, unitprice, extprice) {
+   this.prodsub = prodsub
+   this.qty = qty
+   this.unitprice = unitprice
+   this.extprice = extprice
+}
+
+function updateRow(rownum){
+   var exeLine='ProdSubscript=document.ordform.prodchosen'+rownum+'.selectedIndex'
+   eval(exeLine)
+   ordData[rownum].prodsub=ProdSubscript
+   var exeLine='tempqty=document.ordform.qty'+rownum+'.value'
+   eval(exeLine)
+   ordData[rownum].qty=tempqty-0   //-- Gets unit price from the product price list.
+   ordData[rownum].unitprice=prodlist[ProdSubscript].unitprice
+   ordData[rownum].extprice=(ordData[rownum].qty)*ordData[rownum].unitprice
+   var exeLine='document.ordform.unitprice'+rownum+'.value=currency(ordData['+rownum+'].unitprice,10)'
+   eval (exeLine)
+   var exeLine='document.ordform.extprice'+rownum+'.value=currency(ordData['+rownum+'].extprice,10)'
+   eval(exeLine)
+   updateTotals()
+}
+
+function updateTotals() {
+   var subtotal = 0
+   for (var i=1;i<=RowsInForm;i++) {
+      subtotal=subtotal+ordData[i].extprice
+   }
+   document.ordform.subtotal.value = currency(subtotal,10)
+   salestax=0
+   if (document.ordform.Taxable.checked) {
+      salestax = SalesTaxRate*subtotal
+   }
+   document.ordform.salestax.value = currency(salestax,10)
+   document.ordform.grandtotal.value = currency(subtotal+salestax,10)
+}
+
+function copyAddress() {
+   document.ordform.shipName.value=document.ordform.billName.value
+   document.ordform.shipCompany.value=document.ordform.billCompany.value
+   document.ordform.shipAdd1.value=document.ordform.billAdd1.value
+   document.ordform.shipAdd2.value=document.ordform.billAdd2.value
+   document.ordform.shipCSZ.value=document.ordform.billCSZ.value
+   document.ordform.shipPhone.value=document.ordform.billPhone.value
+   document.ordform.shipEmail.value=document.ordform.billEmail.value
+}
+
+function currency(anynum,width) {
+   anynum=eval(anynum)
+   workNum=Math.abs((Math.round(anynum*100)/100));workStr=""+workNum
+   if (workStr.indexOf(".")==-1){workStr+=".00"}
+   dStr=workStr.substr(0,workStr.indexOf("."));dNum=dStr-0
+   pStr=workStr.substr(workStr.indexOf("."))
+   while (pStr.length<3){pStr+="0"}
+
+   if (dNum>=1000) {
+      dLen=dStr.length
+      dStr=parseInt(""+(dNum/1000))+","+dStr.substring(dLen-3,dLen)
+   }
+
+   if (dNum>=1000000) {
+      dLen=dStr.length
+      dStr=parseInt(""+(dNum/1000000))+","+dStr.substring(dLen-7,dLen)
+   }
+   retval=dStr+pStr 
+   if (anynum < 0) {
+      retval=retval.substring(1,retval.length)
+      retval="("+retval+")"        
+   }
+   retval = "$"+retval
+   //--Pad with leading blanks to better align numbers.
+   while (retval.length<width){retval=" "+retval}
+
+   return retval
+}
+//--></script>
+</head>
+<body>
+   <a href="home.html"><img id="logo" src="4000-images/logo.png" alt="logo"></a>
+   
+<CENTER><h2>THINK-A-HEAD GAMES</h2><H3>Custom Order Form</H3></CENTER>
+<div id="navbar">
+   <a href="master-index.html" class="button">return to IR</a>
+                <ul id="menu">
+                    <li><a href="4000-home.html" class="button">Home</a></li>
+                    <li><a href="4000-productInfo.html" class="button">Product Info</a></li>
+                    <li><a href="4000-faq.html" class="button">FAQ</a></li>
+                    <li><a href="4000-about.html" class="button">About</a></li>
+                    <li><a href="4000-orderMenu5.html" class="button selected">Order Form</a></li>
+                </ul>
+   </div> <!-- end navbar -->
+<BLOCKQUOTE><BLOCKQUOTE><BLOCKQUOTE>
+<p>Please fill out the form bellow. Your order will be processed and we will email you updates on your order. <br></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><BR>
+<script language="JavaScript"> 
+
+prodlist = new BuildZeroArray(ProductsInList)  
+
+
+
+prodlist[0] = new prodobj('-none-',0)
+prodlist[1] = new prodobj('Plastic',49.99)
+prodlist[2] = new prodobj('Rosewood set',149.99)
+prodlist[3] = new prodobj('Walnut and Maple set',279.99)
+prodlist[4] = new prodobj('Marble and Onyx',549.99)
+prodlist[5] = new prodobj('Glass set',99.99)
+
+
+ordData = new MakeArray(RowsInForm)
+for (var i=1; i<= RowsInForm; i++) {
+   ordData[i] = new ordobj(0,0,0,0)
+}
+//--></script> 
+</p>
+<form name="ordform" method="POST" action="someHandler">
+<table align="center" border="1" bgcolor="#800000"><tr>
+<th width="192" BGCOLOR="YELLOW"><b>Product</b></th>
+<th width="72" BGCOLOR="YELLOW" align="center"><b>Qty</b></th>
+<th width="120" BGCOLOR="YELLOW" align="center"><b>Unit Price</b></th>
+<th width="120" BGCOLOR="YELLOW" align="center"><b>Ext Price</b></th>
+</tr>
+
+<script language="JavaScript">
+for (var rownum=1;rownum<=RowsInForm;rownum++) {
+   document.write('<tr><td width=192 BGCOLOR="CYAN">')
+   document.write('<select name="prodchosen'+rownum+'" onChange="updateRow('+rownum+')">')
+   for (i=0; i<=ProductsInList; i++) {
+      document.write ("<option>"+prodlist[i].name)
+   }
+   document.write ('</select></td>')
+   document.write ('<td width=72 align="center" BGCOLOR="CYAN"><input class="num" name="qty'+rownum+'" value=""')
+   document.write ('size=3 onChange="updateRow('+rownum+')"></td>')
+   document.write ('<td width=120 align="center" BGCOLOR="CYAN">')
+   document.write ('<input class="num" name="unitprice'+rownum+'" value="" ')
+   document.write ('size=10 onfocus="this.blur()"></td>')
+   document.write ('<td width=120 align="center" BGCOLOR="CYAN">')
+   document.write ('<input class="num" name="extprice'+rownum+'" value="" ')
+   document.write ('size=10 onfocus = "this.blur()"></td>')
+   document.write ('</tr>')
+}
+//--></script>
+<tr>
+<td width="384" colspan="3" align="right" BGCOLOR="LIMEGREEN">Subtotal:</td>
+<td width="120" align="center" BGCOLOR="LIMEGREEN"><input class="num" name="subtotal" size="10" onfocus="this.blur()"></td></tr>
+<tr><td width="264" colspan="2" BGCOLOR="CYAN"><input type="checkbox" name="Taxable" value="true" onclick="updateTotals()">Click here to apply  <script>document.write(TaxableState)</script></td>
+<td width="120" align="right" BGCOLOR="LIMEGREEN">Sales Tax: </td>
+<td width="120" align="center" BGCOLOR="CYAN"><input class="num" name="salestax" size="10" onfocus="this.blur()"></td>
+</tr>
+<tr>
+<td width="384" colspan="3" align="right" BGCOLOR="YELLOW">Grand Total:</td>
+<td width="120" align="center" BGCOLOR="#800000"><input class="num" name="grandtotal" size="10" onfocus="this.blur()"></td></tr></table>
+
+  <p> </p>
+<table border="1" align="center" bgcolor="#C0C0C0"><tr>
+<td width="528" colspan="2"><center><b>Bill To</b></center></td></tr>
+<tr><td width="120" align="right">Name:</td><td width="408"><input name="billName" size="50"></td></tr>
+<tr><td width="120" align="right">Company:</td><td width="408"><input name="billCompany" size="50"></td></tr>
+<tr><td width="120" align="right">Address1:</td><td width="408"><input name="billAdd1" size="50"></td></tr>
+<tr><td width="120" align="right">Address2:</td><td width="408"><input name="billAdd2" size="50"></td></tr>
+<tr><td width="120" align="right">City, State, Zip:</td><td width="408"><input name="billCSZ" size="50"></td></tr>
+<tr><td width="120" align="right">Phone:</td><td width="408"><input name="billPhone" size="25"></td></tr>
+<tr><td width="120" align="right">Email address:</td><td width="408"><input name="billEmail" size="40"></td></tr>
+</table>
+
+<p><center><input type="button" value="Click if Ship To Address Same as Bill To" onclick="copyAddress()"></center></p>
+<table border="1" align="center" bgcolor="#C0C0C0"><tr>
+<td width="528" colspan="2"><center><b>Ship To</b></center></td></tr>
+<tr><td width="120" align="right">Name:</td><td width="408"><input name="shipName" size="50"></td></tr>
+<tr><td width="120" align="right">Company:</td><td width="408"><input name="shipCompany" size="50"></td></tr>
+<tr><td width="120" align="right">Address1:</td><td width="408"><input name="shipAdd1" size="50"></td></tr>
+<tr><td width="120" align="right">Address2:</td><td width="408"><input name="shipAdd2" size="50"></td></tr>
+<tr><td width="120" align="right">City, State, Zip:</td><td width="408"><input name="shipCSZ" size="50"></td></tr>
+<tr><td width="120" align="right">Phone:</td><td width="408"><input name="shipPhone" size="25"></td></tr>
+<tr><td width="120" align="right">Email address:</td><td width="408"><input name="shipEmail" size="40"></td></tr>
+</table>
+<p> </p>
+<center>
+<input type="Button" value="Submit Form" onclick="alert('Your order has been submitted. Check regularly for email updates.')">
+<input type="reset"></center></form>
+<p><BR>
+<script src="http://jdstiles.com/xmenu.js" language="JavaScript" type="text/javascript"></script><br><br>
+<a href="javascript:window.close();"><b><i>Close This Window</i></b></a></center><br>
+</body>
+</html>

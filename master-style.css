@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+ 
+#splash{
+    
+    height: 1000px;
+    background: url(images/bavaria.jpg) no-repeat center top fixed;
+   	background-size: cover; 
+}
+
+#splash h1{
+    font-family: 'Artifika', sans-serif;
+    font-size: 70px; 	
+    text-shadow: 5px 5px #000;
+    padding: 100px 400px;
+}
+
+#overview{
+    padding: 60px 0;
+    background:  center fixed;
+    background-color: #658ec3;
+    
+}
+#overview p{
+    font-size: 1.5em;
+}
+#experience{
+    padding: 60px 0;
+    background:  center fixed;
+    background-color: #658ec3;
+    
+}
+#experience p{
+    font-size: 1.5em;
+}
+#portfolio{
+    padding: 60px 0;
+    background:  center fixed;
+    background-color: #7ca7d8;
+    
+}
+#portfolio p{
+    font-size: 1.5em;
+}
+#video{
+    padding: 60px 0;
+    background:  center fixed;
+    background-color: #abc9ef;
+    
+}
+#video p{
+    font-size: 1.5em;
+}
+#footer{
+    
+    padding: 60px 0;
+    background: url(images/socialmedia3.jpg) no-repeat center fixed;
+    background-size: cover;
+    
+    
+}
+#footer p{
+    font-size: 3em;
+    
+}
+#footer a{
+    font-size:1em;
+    padding: 0 250px;
+}
+#content{
+    float: left;
+}
+
+
+#overview img{
+    float: left;
+    border: 0.5px solid #0915F5;
+    padding: 6px;
+    margin: 0 12px 6px 0;
+}
+#othersocialmedia img{
+
+    
+    padding: 20px 100px;
+    
+}
+
+ol li{
+    float: left;
+    padding-left: 20px;
+    font-size: 1em;
+}
+h1{
+    padding: 0px 100px 0px 100px;
+    font-family: Bellefair;
+    margin: 0;
+    letter-spacing: 0.3em;
+    font-size: 2em;
+}
+h2{
+    
+     
+     
+    
+    margin: 0;
+    
+}
+h3{
+     
+    
+    font-size: 3em;
+    margin: 0;
+}
+
+
+
+iframe{
+    float: left;
+    border: 0.5px;
+    padding: 6px;
+    
+}
+/* ---------------- CONTAINER STYLES ----------------- */
+/* Containers are used to keep the page content within bounds centered in the browser window. */
+.container {
+  width: 1000px; /* static width container always stays at this width no matter what the window size */
+  margin: 0 auto;
+  overflow: hidden;
+  
+}
+
+.half_container { /* provides a two column presentation */
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+
+/* ----------------- NAVIGATION BAR STYLES -------------------*/ 
+
+#navbar{
+	position: fixed; /* navbar should always be shown even when page is scrolled */
+	top: 0;
+	width: 100%;
+	height: 54px;
+	background-color: rgba(255, 255, 255, 0.8); 
+}
+/* horizontal menu bars are typically created using a styled unordered list. Here's how! */
+ul#menu {
+	list-style: none; /* eliminates bullets */
+	/* adjust padding top to adjust nav bar vertical position */
+	padding-top: 0px;
+} 
+ul#menu li {
+	float: left; /* changes list from vertical to horizontal */
+	padding-bottom: 20px;
+} 
+ul#menu li a.button {
+	font-size: 16px;
+	text-decoration: none;
+	/* this padding defines the size of the buttons */
+	/*padding: 20px 100px 20px 100px;*/
+    padding: 20px 75px;
+    
+}
+
+/* ------------------- FOOTER CREDITS --------------------- */
+
+#credits {
+  text-align: center;	
+}
+#credits table{      
+  margin: 0 auto;		/* centers the color palette table */
+}
+#credits p {
+  font-size: .8em;
+  margin: 10px 0;
+}
+
+/* ---------------------- MISC -----------------------------*/
+
+.fltright{
+	float:right;
+	margin: 20px;
+}
+.fltleft{
+	float:left;
+	margin: 20px 20px 20px 0;
+}

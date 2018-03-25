@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>My Interactive Resume</title>
+    <link href="master-style.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Artifika" rel="stylesheet">
+	<link href="master-media-queries.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" >
+</head>
+
+<body>
+
+<section id="splash">
+	<h1>Clayton Kuhlmeier</h1>
+    <div id="navbar">
+		<div class="container">  <!-- container keeps everything aligned and centered no matter what the window size -->
+			<ul  id="menu">
+				<!-- button class provides button-like appearance and scrolling javascript (see bottom of html code) -->
+				<li><a href="#overview" class="button">Overview</a></li>
+				<li><a href="#experience" class="button">Experience</a></li>
+				<li><a href="#portfolio" class="button">Portfolio</a></li>
+				
+				<li><a href="#footer" class="button">Contact</a></li>
+			</ul>
+		
+		</div>
+		
+</section>
+<section id="overview">
+
+	<div class="container">
+
+		<h1>Overview</h1>
+			
+				 <img src="images/profile.jpg" alt="The author">
+                <p>
+                    Hi my name is Clayton Kuhlmeier. I am an intelligent and diligent worker. I am an ICT student at Florida State University, 
+                    and I am graduating in the summer of 2018. I am proficient in HTML, CSS, Java and Javascript.
+                     I am also able to learn new things very quickly. I am also driven to give 110% to any task I am given.</p>
+                     <p>If you or your company are looking for someone to make a quality, modern website, look no further. 
+                     Please peruse my website and contact me with any questions or inquries.</p>
+				
+		
+	</div>
+</section>
+<section id="experience">
+
+	<div class="container">
+
+		<h1>Experience</h1>
+			
+				 <h3>DATA ANALYST/FLORIDA DEPARTMENT OF TRANSPORTATION</h3>
+                <h4>Dec 2015 – Present</h4>
+                <p>My Job was to input crash data into a database, for it to then be given to the
+                different counties of Florida to improve their roadways.
+                    The take away from this job was hands on experience with data entry into a database</p>
+                <h3>KEY HOLDER/ GARNET AND GOLD</h3>
+                <h4>August 2010 – July 2016</h4>
+                <p>I was in charge of opening and closing the store. Also counting the registers.
+                I was also in charge of making sure that I and my coworkers were being productive.
+	                There were several take aways from this job. Most importantly experience in leadership.
+            Also there was experience with Poin of sale systems and inventory databases.</p>
+                
+            <h1>Education</h1>
+            <h3>BACHELOR OF SCIENCE/ DECEMBER OF 2015 </h3>
+            <h4>Tallahassee Community College</h4>
+            <p>I studied C++ here and my GPA was 3.14</p>
+            
+            <h2>Skills</h2>
+            <ol>
+                <li>HTML</li>
+                <li>CSS/Javascript</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>Microsoft Office</li>
+            </ol>
+               
+				
+		
+	</div>
+</section>
+<section id="portfolio">
+	<div class="container">
+		<h1>My Portfolio</h1>
+				<ol>
+					<li><h3><a href="4000-home.html" class="button">Think-A-Head Games</a></h3></li>
+					<p><a href="4000-home.html" class="button"><img src="images/chess.png"  alt="chesslogo"></a> </p>
+					<ul>THINK-A-HEAD GAMES is my creation for a class in college.
+					It is a fake company and website. Complete with an order form.</ul>
+					<p></p>
+					
+					<li><h3><a href="p12-index.html" class="button">Social Media Overview</a></h3></li>
+					<p><a href="p12-index.html" class="button"><img src="images/socialmediapro.png" alt="Social Media"></a></p>
+					<ul>This is a Website I created to give a brief history of social media. 
+					It was made with JQUERY.</ul>
+					<p></p>
+					
+					<li><h3><a href="movie-index.html" class="button">Seminole Movie</a></h3></li>
+					<p><a href="movie-index.html" class="button"><img src="images/seminole_movie.png" alt="Seminole Movie Connection"></a></p>
+					<ul>This is a website I made with
+					Ajax to access a movie database</ul>
+					<p></p>
+					
+					<li><a href="brownie-index2.html" class="button"><h3>Brownie Recipe</h3></a></li>
+					<p><a href="brownie-index2.html" class="button"><img src="images/brownie.png" alt="Brownie"></a></p>
+					<ul>-	This is an online recipe display app I created.
+					It utilizes JavaScript to use drop down Ingredients
+					list and Instructions.</ul>
+					<p></p>
+				</ol>
+    </div>
+</section>
+
+
+<section id="footer">
+	<div class="container">
+		<div id="credits">
+			<h3>contact information</h1>
+			
+						<h2>Contact Information</h2>
+						<p>Email: cek16b@my.fsu.edu</p>
+			
+			
+			<table width="80">
+					<tr>
+						<td bgcolor="#658ec3">&nbsp;</td>
+						<td bgcolor="#7ca7d8">&nbsp;</td>
+					</tr>
+					<tr>
+						<td bgcolor="#abc9ef">&nbsp;</td>
+						<td bgcolor="#ffffff">&nbsp;</td>
+					</tr>
+				</table>
+			<img src="images/creative.png" alt="Creative commons license">
+					
+		</div>
+	</div>
+</section>
+	</div>
+	<!-- JAVASCRIPT CODE -->
+<!--jquery required for scrolling effect -->
+<script src="master-js/master-jquery.js"></script>
+<!-- Scrolling navigation script by Geo Miller glmiller@pic.fsu.edu -->  
+<script type='text/javascript'>
+jQuery(document).ready(function () {
+  jQuery('.button').click(function() {
+    targetName = jQuery(this).attr('href');
+    targetLocation = jQuery(targetName).offset().top;
+    jQuery('html, body').animate({scrollTop:targetLocation}, 'slow');
+    return false;
+  });
+});
+</script>
+</body>
+</html>
