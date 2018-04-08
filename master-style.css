@@ -97,7 +97,7 @@ h1{
     font-family: Bellefair;
     margin: 0;
     letter-spacing: 0.3em;
-    font-size: 2em;
+    font-size: 50em;
 }
 h2{
     
@@ -112,6 +112,10 @@ h3{
     
     font-size: 3em;
     margin: 0;
+}
+
+h4{
+    font-size: larger;
 }
 
 
